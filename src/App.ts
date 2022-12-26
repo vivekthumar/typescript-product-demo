@@ -12,8 +12,9 @@ export default class App {
 		this.express = express();
 		this.httpServer = http.createServer(this.express);
 
+    // Append middleware to req. We can create another file for middleware if we are using so many.
 		this.middleware();
-
+    // Define Routes
 		this.routes();
     
 	}

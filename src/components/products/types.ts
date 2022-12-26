@@ -7,7 +7,6 @@ export interface product {
   quantity: number;
 }
 
-
 export interface ProductResponse {
 	data: product[];
 }

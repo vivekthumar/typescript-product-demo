@@ -35,6 +35,7 @@ export default class ProductController {
       if (!productData) {
         throw ({ 'message':'Product Id not Found' });
       } 
+      // We can add more check like product is still avalible or not etc.
 
       await OrderModel.create({
         productId,
@@ -44,6 +45,8 @@ export default class ProductController {
 	
 			return res.send('Order Created');
 		} catch (err) {
+      // we can also create error middleware for handing 500 type error.
+      
       return res.status(500).send({
         message: err.message || 'Internal Error.',
       });

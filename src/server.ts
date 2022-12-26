@@ -12,6 +12,7 @@ function serverListening(): void {
 	logger.info(`Listening on :${env.port}`);
 }
 
+// Wait for connection and then init app
 connection.sync().then(() => {
   app.init()
     .then(() => {
@@ -25,6 +26,6 @@ connection.sync().then(() => {
 
 
 process.on('unhandledRejection', (reason: Error) => {
-	logger.error('Unhandled Promise Rejection: reason:', reason.message);
+	logger.error('Unhandled', reason.message);
 	logger.error(reason.stack);
 });
